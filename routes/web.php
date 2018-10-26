@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('todo', 'ToDoController');
+Route::get('/todo/{id}/done', 'ToDoController@done')->name('todo.done');
+Route::get('/todo/{id}/undone', 'ToDoController@undone')->name('todo.undone');
 
 Auth::routes();
 
